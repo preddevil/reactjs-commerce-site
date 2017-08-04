@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var React = require('react');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './index.html',
@@ -40,10 +41,21 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract('css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract(['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass-loader'])
             }
         ]
     },
     plugins: [
+        new ExtractTextPlugin('style.css'),
         /**
          * Generate an HTML5 file that includes all your webpack bundles in the body using script tags
          */
@@ -66,6 +78,9 @@ module.exports = {
          */
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
+        }),
+        new webpack.ProvidePlugin({
+            "React": React
         })
     ]
 };

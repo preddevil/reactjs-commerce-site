@@ -14,13 +14,13 @@ new WebpackDevServer(webpack(config), {
     noInfo: false,
     stats: {
         // Config for minimal console.log mess.
-        assets: false,
+        assets: true,
         colors: true,
-        version: false,
-        hash: false,
+        version: true,
+        hash: true,
         timings: false,
-        chunks: false,
-        chunkModules: false
+        chunks: true,
+        chunkModules: true
     }
 }).listen(3000, 'localhost', function(err) {
     if (err) {
