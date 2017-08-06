@@ -24,13 +24,7 @@ class App extends React.Component {
             name: "Suspense"
             }
         ];
-        let listOfBooks = [{
-            id: 1,
-            name: 'Book 1'
-        }, {
-            id: 2,
-            name: 'Book 2'
-        }];
+        let listOfBooks = this.props.books;
         return (
             <div>
                 <h1>BOOK PLACE</h1>

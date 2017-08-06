@@ -9,19 +9,19 @@ export default class MainContent extends React.Component {
         super(props);
     }
     render() {
+        let listOfProductThumbnails = [];
+        let listOfBooks = this.props.listOfBooks;
+        listOfProductThumbnails = listOfBooks.map(book => {
+            return <ProductThumbnail key={book.id} />
+        });
         return (
             <div>
-                <ProductThumbnail />
-                <ProductThumbnail />
-                <ProductThumbnail />
-                <ProductThumbnail />
-                <ProductThumbnail />
-                <ProductThumbnail /> 
+                {listOfProductThumbnails} 
             </div>
         )
     }
 }
 
 MainContent.PropTypes = {
-    
+    listOfBooks: PropTypes.array
 }
