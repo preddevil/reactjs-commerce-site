@@ -6,6 +6,18 @@ let initialState = [{
 }, {
     id: 2,
     name: 'Book 2'
+}, {
+    id: 3,
+    name: 'Book 2'
+}, {
+    id: 4,
+    name: 'Book 2'
+}, {
+    id: 5,
+    name: 'Book 2'
+}, {
+    id: 6,
+    name: 'Book 2'
 }]
 
 export const books = (state = initialState, action) => {

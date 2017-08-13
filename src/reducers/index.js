@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import { books } from './books'
+import { books } from './books';
+import { appConfig } from './appConfig';
 
 const rootReducer = combineReducers({
-    books
+    books,
+    appConfig
 })
 
 export default rootReducer
