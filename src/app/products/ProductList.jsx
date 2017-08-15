@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductThumbnail from './product-thumbnail/ProductThumbnail';
-
+import styles from './ProductList.scss';
 
 export default class ProductList extends React.Component {
     render() {
@@ -14,7 +14,7 @@ export default class ProductList extends React.Component {
             />
         });
         return (
-            <div>
+            <div className={styles.container}>
                 {listOfProductThumbnails} 
             </div>
         )

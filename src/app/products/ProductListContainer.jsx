@@ -4,13 +4,10 @@ import {connect} from 'react-redux';
 import ProductList from './ProductList';
 import { addProductToBasket } from '../../actions';
 
+
 class ProductListContainer extends React.Component {
     render() {
-        return (
-            <div>
-                <ProductList {...this.props} />
-            </div>
-        )
+        return <ProductList {...this.props} />
     }
 }
 

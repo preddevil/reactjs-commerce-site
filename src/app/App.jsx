@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ProductListContainer from './products/ProductListContainer';
 import NavigationContainer from './navigation/NavigationContainer';
-import styles from './App.scss';
+import RoutesContainer from '../routes';
 
 class App extends React.Component {
     render() {
@@ -10,11 +9,7 @@ class App extends React.Component {
             <div>
                 <h1>BOOK PLACE</h1>
                 <NavigationContainer />
-                <div className={styles['filter-panel']}>
-                </div>
-                <div className={styles.container}>
-                    <ProductListContainer />
-                </div>
+                <RoutesContainer />
             </div>
         )
     }
