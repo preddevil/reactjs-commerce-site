@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductThumbnail from './product-thumbnail/ProductThumbnail';
-import styles from './ProductList.scss';
+import globalStyles from '../Globals.scss';
+import cx from 'classnames';
 
 export default class ProductList extends React.Component {
     render() {
         let listOfProductThumbnails = [];
         let listOfBooks = this.props.listOfBooks;
+        let className = cx('content');
         listOfProductThumbnails = listOfBooks.map(book => {
             return <ProductThumbnail 
                 key={book.id}
@@ -14,7 +16,7 @@ export default class ProductList extends React.Component {
             />
         });
         return (
-            <div className={styles.container}>
+            <div className={className}>
                 {listOfProductThumbnails} 
             </div>
         )

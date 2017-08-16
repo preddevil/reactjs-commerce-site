@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Login.scss';
+import globalStyles from '../Globals.scss';
 
 export default class Login extends React.Component {
     render() {
         return (
-            <div className={styles.login}>Login</div>
+            <div className='content'>Login</div>
         )
     }
 }
